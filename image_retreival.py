@@ -25,7 +25,7 @@ def get_features(model, loader):
         for batch, _ in tqdm(loader):
             if torch.cuda.is_available():
                 batch = batch.cuda()
-            b_features = model(batch).detach().numpy()
+            b_features = model(batch).detach().cpu().numpy()
             for f in b_features:
                 features.append(f)
 
