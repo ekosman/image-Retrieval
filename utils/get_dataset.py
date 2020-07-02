@@ -15,5 +15,5 @@ def get_dataset(args, normalize=True):
 		])
 	kwargs = {'num_workers': 1, 'pin_memory': True} if torch.cuda.is_available() else {}
 	dataset = datasets.ImageFolder(args.image_path, transform=transform)
-	loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True, **kwargs)
+	loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=False, **kwargs)
 	return dataset, loader
