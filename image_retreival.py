@@ -30,7 +30,7 @@ def get_features(model, loader):
             for f in b_features:
                 i+= 1
                 features.append(f)
-            if i > 20: break
+            # if i > 20: break
 
     return features
 
