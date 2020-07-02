@@ -11,8 +11,8 @@ class VGG:
 		# if pretrained_path is not None:
 		# 	model.load_state_dict(load('checkpoint/vgg16/vgg16-190-best.pth', map_location='cpu'))
 		#
-		# model.classifier = nn.Sequential(*list(model.classifier.children())[:3])
-		self.model = nn.Sequential(*list(model.features.children())[:2])
+		model.classifier = nn.Sequential(*list(model.classifier.children())[:3])
+		# self.model = nn.Sequential(*list(model.features.children())[:2])
 		if use_cuda:
 			self.model = self.model.cuda()
 
