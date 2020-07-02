@@ -13,7 +13,10 @@ def show_neighbors(orig, neighbors, name):
 			ax.set_title("Original image")
 		else:
 			ax.set_title(f"Neighbor {i}")
+
 		ax.imshow(image_datas[i])
+		ax.set_yticklabels([])
+		ax.set_xticklabels([])
 	plt.tight_layout()
 	plt.savefig(path.join('output', f"{name}.png"))
 
