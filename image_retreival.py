@@ -21,16 +21,13 @@ parser.add_argument('-batch_size', type=int, default=100,
 
 def get_features(model, loader):
     features = []
-    i=0
     with torch.no_grad():
         for batch, _ in tqdm(loader):
             if torch.cuda.is_available():
                 batch = batch.cuda()
             b_features = model(batch).detach().cpu().numpy()
             for f in b_features:
-                i+= 1
                 features.append(f)
-            # if i > 20: break
 
     return features
 

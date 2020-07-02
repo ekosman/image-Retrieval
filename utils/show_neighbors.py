@@ -14,6 +14,6 @@ def show_neighbors(orig, neighbors, name):
 		else:
 			ax.set_title(f"Neighbor {i}")
 		ax.imshow(image_datas[i])
-
+	plt.tight_layout()
 	plt.savefig(path.join('output', f"{name}.png"))
 
