@@ -16,7 +16,7 @@ class VGG:
 		if use_cuda:
 			self.model = self.model.cuda()
 
-		self.model = model.eval()
+		self.model = self.model.eval()
 
 	def __call__(self, x):
 		return self.model(x)
