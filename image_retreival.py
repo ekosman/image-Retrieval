@@ -23,7 +23,9 @@ def get_features(model, loader):
     features = []
     with torch.no_grad():
         for batch, _ in tqdm(loader):
-            b_features = vgg(batch).detach().numpy()
+            if torch.cuda.is_available():
+                batch = batch.cuda()
+            b_features = model(batch).detach().numpy()
             for f in b_features:
                 features.append(f)
 
