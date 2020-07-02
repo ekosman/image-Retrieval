@@ -25,7 +25,7 @@ class KNN:
 
 		dists = np.array([self.single_image_distances(x_, k) for x_ in x])
 		sorted_idx = np.argsort(a=dists, axis=1)
-		return sorted_idx[:, -k:]
+		return sorted_idx[:, :k]
 
 	def single_image_distances(self, x, k):
 		if k > len(self):
